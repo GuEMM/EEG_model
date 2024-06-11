@@ -10,4 +10,4 @@ The output of the script gives:
 
 
 Reference:
-  -Menesse G, Torres J. 2023. Information dynamics efficiently discriminates high γ-rhythms in EEG brain waves. DOI: https://arxiv.org/abs/2311.13977 
+  Menesse G, Torres J. 2023. Information dynamics efficiently discriminates high γ-rhythms in EEG brain waves. DOI: https://arxiv.org/abs/2311.13977 
