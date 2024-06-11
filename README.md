@@ -8,6 +8,7 @@ The output of the script gives:
   - File with average membrane potential time series of 5 groups of excitatory and inhibitory neurons.
   - File with binned time series of spiking state of N neurons of the network.
 
-
 Reference:
   Menesse G, Torres J. 2023. Information dynamics efficiently discriminates high γ-rhythms in EEG brain waves. DOI: https://arxiv.org/abs/2311.13977 
+
+The Information Dynamics analysis software used in the Reference is available in https://github.com/GuEMM/PhiID_Tools.git
