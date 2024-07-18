@@ -1,4 +1,4 @@
-using Random, Distributions, DelimitedFiles
+using Random, Distributions, DelimitedFiles, Plots
 
 function Listof_KOut(C,idn,L,Ne)
 
@@ -775,5 +775,42 @@ function LIF_Sim_TauMu_SinCur(N,Ne,A,IIV,V0d,taur,mu,nu,filename="Test.txt",Tt=1
     	
     end
     
+    return nothing
+end
+
+function Plot_Net(C,IIdn)
+    CC = ifelse.((C .<= Ne).&(C .> 0), 1, C)
+    
+    CC = ifelse.(CC .> Ne, -1, CC)
+    
+    C1 = 1*CC;
+    C2 = 1*CC;
+    
+    display(heatmap(CC,colormap=cgrad(:bluesreds, 4, categorical = true),cbar=false))
+    
+    for Idd in IIdn
+        idn = Ne+Idd
+        idI = KK[idn,:]
+    
+        #heatmap!(C1,colormap=:jet)
+        
+        idI = KIout[idn-Ne,:]
+    
+        #II = collect(Set(KK[KIout[idn-ce^2,[4,5,8,9]],1:3]))
+        II = vcat(KK[idn,:],collect(Set(KK[KIout[idn-Ne,:],1:3])))
+        
+        for i in idI
+            Iid = findall(x->x ∈ II,C)
+            idx = findall(x->x==i,C)
+    
+            #C2[idx] .= -1
+    
+            C2[Iid] .= 2
+    
+        end
+    end
+    
+    display(heatmap(C2,cbar=false,colormap=cgrad(:bluesreds, 3, categorical = true)))
+
     return nothing
 end
